@@ -32,7 +32,18 @@ git clone https://github.com/pouria-azad/IranMap.git
 cd "map 3"
 ```
 
-### 2. تنظیم پایگاه داده
+### 2. ساخت پایگاه داده
+دو روش برای ساخت پایگاه داده وجود دارد:
+
+#### روش اول: استفاده از فایل SQL (پیشنهادی)
+فایل `SQLScript/file.sql` را در SQL Server Management Studio اجرا کنید یا با دستور زیر:
+
+```bash
+# اجرای فایل SQL با sqlcmd
+sqlcmd -S . -i SQLScript/file.sql
+```
+
+#### روش دوم: استفاده از Entity Framework
 ```bash
 # اجرای مایگریشن‌ها
 dotnet ef database update
@@ -81,6 +92,8 @@ map 3/
 │   ├── js/
 │   │   └── map.js                    # اسکریپت‌های نقشه
 │   └── data/                         # فایل‌های GeoJSON
+├── SQLScript/
+│   └── file.sql                      # اسکریپت ساخت پایگاه داده
 └── Migrations/                       # مایگریشن‌های پایگاه داده
 ```
 
@@ -133,4 +146,4 @@ GET /GetProvincesList
 
 ---
 
-**نکته**: این پروژه از داده‌های GeoJSON ایران از مخزن [iran-geojson](https://codeberg.org/mokazemi/iran-geojson) استفاده می‌کند. 
+**نکته**: این پروژه از داده‌های GeoJSON ایران از مخزن [iran-geojson](https://codeberg.org/mokazemi/iran-geojson) استفاده می‌کند.
