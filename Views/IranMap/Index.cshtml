@@ -1,0 +1,14 @@
+﻿@{
+    Layout = "~/Views/Shared/IranMap/_Layout.cshtml";
+    ViewData["Title"] = "نقشه استان‌های ایران";
+}
+
+
+<div id="map" class="map-cls">
+    @await Html.PartialAsync("IranMap/Map/_InfoBox")
+    @await Html.PartialAsync("IranMap/Map/_ProvinceInfoCard")
+</div>
+
+@section Scripts {
+    <script src="~/js/map.js"></script>
+}

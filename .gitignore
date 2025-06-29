@@ -1,0 +1,8 @@
+obj/
+bin/
+*.user
+*.suo
+*.cache
+appsettings.Development.json
+.tmp
+*.tmp
